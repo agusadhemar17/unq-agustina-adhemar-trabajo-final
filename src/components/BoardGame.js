@@ -11,31 +11,15 @@ import contenedor from './contenedor.png'
 
  function BoardGame (){
         
-    const [puntajeComputadora,setPuntajeComputadora] = useState(10);
+    const [pointComputer,setPointComputer] = useState(0);
+    const [pointPlayer,setPointPlayer] = useState(0);
     const [selectCardComputer,setSelectCardComputer] = useState();
     const [selectCardPlayer,setSelectCardPlayer] = useState();  
     const [estadoJugada,setEstadoJugada] = useState("Haz click en una opción para jugar");
-    const [puntajeJugador,setPuntajeJugador] = useState(10);
-    
+    const [numeroOponente,setnumeroOponente]= useState();
+    const cards = [piedra, papel, tijera, lagarto, spock];
+ 
 
-  function selectCard(numero) {
-    let cards = [piedra, papel, tijera, lagarto, spock]
-    let index = Math.floor(Math.random() * cards.length);
-    let cardC = cards[index];
-    let cardP = cards[numero];
-    setSelectCardComputer(cardC);
-    setSelectCardPlayer(cardP);
-    console.log("computadora" + index)
-    console.log("player"+ numero)
-    return index;
-  }
-
-  function evaluarJugada(numero) {
-    selectCard(numero)
-    gane(numero,selectCard(numero))
-    
-  }
-  
   function gane(player, computer) {
     if ((player === 0 && ((computer === 3) || (computer === 2)))
       || (player === 1 && ((computer === 0) || (computer === 4)))
@@ -65,28 +49,38 @@ import contenedor from './contenedor.png'
       empate()
     }
   }
-
   function empate() {
     setEstadoJugada("Hubo un empate, intentalo nuevamente" + "😬");
     
   }
 
   function ganaJugador() {
-    setPuntajeJugador(puntajeJugador + 1);
+    setPointPlayer(pointPlayer + 1);
     setEstadoJugada("GANASTE!!!" + "🥳");
+    alert(pointPlayer)
   }
 
   function ganaComputadora() {
     setEstadoJugada("Perdiste!!!" + "😟");
-    setPuntajeComputadora(puntajeComputadora + 1); 
+    setPointComputer(pointComputer + 1); 
     
   }
-
+  function setearYEvaluarJugada(numero) {
+   
+    let index = Math.floor(Math.random() * cards.length);
+    let cardP = cards[numero];
+    let cardC = cards[index];
+    setSelectCardComputer(cardC);
+    setSelectCardPlayer(cardP);
+    gane(numero, index);
+    
+  }
+  
   function setearTableroInicio(){
-    setPuntajeComputadora(10);
-    setPuntajeJugador(10);
-    setSelectCardComputer(contenedor);
-    setSelectCardPlayer(contenedor);
+    setPointComputer(0);
+    setPointPlayer(0);
+    setSelectCardComputer();
+    setSelectCardPlayer();
   }
   
 
@@ -95,23 +89,23 @@ import contenedor from './contenedor.png'
 
         <div className="header-point-sm">
           <div >
-            PUNTOS PLAYER 1: <span> {puntajeJugador}</span>
+            PUNTOS PLAYER 1: <span> {pointPlayer}</span>
           </div>
           <div>
-            PUNTOS PLAYER 2: <span> {puntajeComputadora} </span>
+            PUNTOS PLAYER 2: <h3> {pointComputer} </h3>
           </div>
         </div>
         <div >
           <h1 className="header-point-m">{estadoJugada}</h1>
-        </div>
+        </div> 
 
         <div className="container-block">
           <button className="contenedor-card-select"><img src={selectCardPlayer} width="150" height="150" /></button>
-          <button className="btn-img" onClick={() => {evaluarJugada(0)}}><img src={piedra} className="contenedor-img" width="100" height="100" /></button>
-          <button className="btn-img" onClick={() => {evaluarJugada(1)}}> <img src={papel} className="contenedor-img" width="100" height="100" /></button>
-          <button className="btn-img" onClick={() => {evaluarJugada(2)}}> <img src={tijera} className="contenedor-img" width="100" height="100" /></button>
-          <button className="btn-img" onClick={() => {evaluarJugada(3)}}> <img src={lagarto} className="contenedor-img" width="100" height="100" /></button>
-          <button className="btn-img" onClick={() => {evaluarJugada(4)}}> <img src={spock} className="contenedor-img" width="100" height="100" /></button>
+          <button className="btn-img" onClick={() => {setearYEvaluarJugada(0)}}><img src={piedra} className="contenedor-img" width="100" height="100" /></button>
+          <button className="btn-img" onClick={() => {setearYEvaluarJugada(1)}}> <img src={papel} className="contenedor-img" width="100" height="100" /></button>
+          <button className="btn-img" onClick={() => {setearYEvaluarJugada(2)}}> <img src={tijera} className="contenedor-img" width="100" height="100" /></button>
+          <button className="btn-img" onClick={() => {setearYEvaluarJugada(3)}}> <img src={lagarto} className="contenedor-img" width="100" height="100" /></button>
+          <button className="btn-img" onClick={() => {setearYEvaluarJugada(4)}}> <img src={spock} className="contenedor-img" width="100" height="100" /></button>
           <button className="contenedor-card-select"><img src={selectCardComputer} width="150" height="150" /></button>
         </div>
         <div>
