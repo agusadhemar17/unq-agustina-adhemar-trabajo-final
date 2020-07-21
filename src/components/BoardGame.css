@@ -29,10 +29,10 @@
   margin: 15px;
   
   }
-/* .btn-img:hover {
+.btn-img:hover {
   transform: scale(1.25); 
   transition:  all .5s;
-} */
+}
 .contenedor-img{
  float: center;
  margin: 20px goldenrod;
@@ -41,7 +41,7 @@
 
 .contenedor-card-select{
   float: center;
-  margin: 100px goldenrod;
+  margin-right: 30px goldenrod;
   background-color: goldenrod;
   border-radius: 4px;
   border: 2px solid teal;
@@ -51,23 +51,28 @@
 
 .header-point-lg{
   font-family: 'Chewy', cursive;
+  font-size: 40px;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.header-point-m{
+  font-family: 'Chewy', cursive;
   font-size: 35px;
   height: 50px;
-  /* border: 1px solid black; */
-  margin-bottom: 10px;
+  margin: 15px;
   display: flex;
-  justify-content: space-between;;
+  justify-content: center;;
   align-content: center;
+
 }
 
 .header-point-sm {
   font-family: 'Chewy', cursive;
   font-size: 22px;
-  height: 50px;
-  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;;
-  align-content: center;
+  /* align-content: center; */
 }
 
 .btn-reiniciar{

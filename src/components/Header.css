@@ -6,9 +6,7 @@
 
 header{
     background-color: darkslategray; 
-    height: 80px;
     border: 1px solid rgb(231, 230, 230);
-    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -30,4 +28,12 @@ header{
     position: relative;
     left: 12px;
     top: 58px;
+}
+
+.img-header{
+    position: relative;
+    margin-top: 1%;
+    margin-right: 2%;
+    
+
 }

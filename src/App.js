@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header ></Header>
-        <Board />
+        {/* <Board /> */}
         <BoardGame />
       </div>
       
