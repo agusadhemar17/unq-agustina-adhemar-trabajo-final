@@ -18,13 +18,13 @@ Reglas de juego
 
 El juego está basado en el tradicional "Piedra, Papel o Tijera" pero agregando dos casos más, siguiendo estas reglas:
 
-Tijera corta a papel
-Papel tapa a Piedra
-Piedra aplasta a Lagarto
-Lagarto envenena a Spock
-Spock rompe a Tijera
-Tijera decapita a Lagarto
-Lagarto devora a Papel
-Papel desautoriza a Spock
-Spock vaporiza a Piedra
-Piedra aplasta a Tijera
+-Tijera corta a papel
+-Papel tapa a Piedra
+-Piedra aplasta a Lagarto
+-Lagarto envenena a Spock
+-Spock rompe a Tijera
+-Tijera decapita a Lagarto
+-Lagarto devora a Papel
+-Papel desautoriza a Spock
+-Spock vaporiza a Piedra
+-Piedra aplasta a Tijera
