@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import './App.css';
-import Board from './components/Board'
-
 import BoardGame from './components/BoardGame';
 
 
@@ -15,8 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header ></Header>
-        {/* <Board /> */}
+        <Header />        
         <BoardGame />
       </div>
       

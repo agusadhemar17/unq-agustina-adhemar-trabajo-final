@@ -13,10 +13,9 @@ import contenedor from './contenedor.png'
         
     const [pointComputer,setPointComputer] = useState(0);
     const [pointPlayer,setPointPlayer] = useState(0);
-    const [selectCardComputer,setSelectCardComputer] = useState();
-    const [selectCardPlayer,setSelectCardPlayer] = useState();  
+    const [selectCardComputer,setSelectCardComputer] = useState(contenedor);
+    const [selectCardPlayer,setSelectCardPlayer] = useState(contenedor);  
     const [estadoJugada,setEstadoJugada] = useState("Haz click en una opción para jugar");
-    const [numeroOponente,setnumeroOponente]= useState();
     const cards = [piedra, papel, tijera, lagarto, spock];
  
 
@@ -57,7 +56,7 @@ import contenedor from './contenedor.png'
   function ganaJugador() {
     setPointPlayer(pointPlayer + 1);
     setEstadoJugada("GANASTE!!!" + "🥳");
-    alert(pointPlayer)
+    
   }
 
   function ganaComputadora() {
@@ -65,6 +64,7 @@ import contenedor from './contenedor.png'
     setPointComputer(pointComputer + 1); 
     
   }
+
   function setearYEvaluarJugada(numero) {
    
     let index = Math.floor(Math.random() * cards.length);
@@ -79,25 +79,27 @@ import contenedor from './contenedor.png'
   function setearTableroInicio(){
     setPointComputer(0);
     setPointPlayer(0);
-    setSelectCardComputer();
-    setSelectCardPlayer();
+    setSelectCardComputer(contenedor);
+    setSelectCardPlayer(contenedor);
   }
   
 
     return (
       <div className="container">
 
-        <div className="header-point-sm">
-          <div >
-            PUNTOS PLAYER 1: <span> {pointPlayer}</span>
+<div  className = "header-point-sm" >
+          <div>
+            PUNTOS PLAYER 1: <h3> {Number(pointPlayer)} </h3 >
           </div>
           <div>
-            PUNTOS PLAYER 2: <h3> {pointComputer} </h3>
+            PUNTOS PLAYER 2: 
+            <h3>{ Number(pointComputer) }  </h3>
           </div>
         </div>
         <div >
-          <h1 className="header-point-m">{estadoJugada}</h1>
+          <h1 className = "header-point-m" > { estadoJugada } </h1>
         </div> 
+       
 
         <div className="container-block">
           <button className="contenedor-card-select"><img src={selectCardPlayer} width="150" height="150" /></button>
