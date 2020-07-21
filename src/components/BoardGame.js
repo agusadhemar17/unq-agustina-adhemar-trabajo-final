@@ -89,10 +89,10 @@ import contenedor from './contenedor.png'
 
 <div  className = "header-point-sm" >
           <div>
-            PUNTOS PLAYER 1: <h3> {Number(pointPlayer)} </h3 >
+            PUNTOS JUGADOR: <h3> {Number(pointPlayer)} </h3 >
           </div>
           <div>
-            PUNTOS PLAYER 2: 
+            PUNTOS COMPUTADORA: 
             <h3>{ Number(pointComputer) }  </h3>
           </div>
         </div>
