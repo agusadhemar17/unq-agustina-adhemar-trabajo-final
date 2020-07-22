@@ -81,6 +81,8 @@ function BoardGame() {
     setPointPlayer(0);
     setSelectCardComputer(contenedor);
     setSelectCardPlayer(contenedor);
+    setEstadoJugada("Haz click en una opción para jugar");
+
   }
 
 
@@ -116,7 +118,7 @@ function BoardGame() {
           </button>
       </div>
     </div>
-
+ 
 
   );
 
@@ -125,3 +127,4 @@ function BoardGame() {
 
 export default BoardGame;
 
+ 
